@@ -1,0 +1,90 @@
+version: 1.3.11
+cache: true
+
+interface:
+  appTitle: "Ren AI"
+
+memory:
+  disabled: false
+  personalize: true
+  tokenLimit: 2000
+  messageWindowSize: 5
+  agent:
+    enabled: true
+    provider: "Groq"
+    model: "llama-3.3-70b-versatile"
+
+endpoints:
+  custom:
+    - name: "Groq"
+      apiKey: "${GROQ_API_KEY}"
+      baseURL: "https://api.groq.com/openai/v1/"
+      models:
+        default:
+          - "llama-3.3-70b-versatile"
+        fetch: true
+      titleConvo: true
+      titleModel: "llama-3.3-70b-versatile"
+      modelDisplayLabel: "Groq"
+      temperature: 0.7
+      systemPrompt: "You are Ren, a smart personal AI assistant. Always respond in the same language the user writes in. Be clear, balanced, and direct — not too short, not too long. No unnecessary intros or filler phrases."
+
+    - name: "Gemini"
+      apiKey: "${GOOGLE_KEY}"
+      baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/"
+      models:
+        default:
+          - "gemini-2.5-pro-preview-05-06"
+          - "gemini-2.0-flash"
+        fetch: false
+      titleConvo: true
+      titleModel: "gemini-2.5-pro-preview-05-06"
+      modelDisplayLabel: "Gemini"
+      temperature: 0.7
+      systemPrompt: "You are Ren, a smart personal AI assistant. Always respond in the same language the user writes in. Be clear, balanced, and direct — not too short, not too long. No unnecessary intros or filler phrases."
+
+    - name: "OpenRouter"
+      apiKey: "${OPENROUTER_API_KEY}"
+      baseURL: "https://openrouter.ai/api/v1/"
+      models:
+        default:
+          - "deepseek/deepseek-r1:free"
+          - "deepseek/deepseek-chat-v3-0324:free"
+          - "google/gemini-2.5-pro-exp-03-25:free"
+          - "meta-llama/llama-4-maverick:free"
+          - "mistralai/mistral-nemo:free"
+          - "qwen/qwen-2.5-coder-32b-instruct:free"
+          - "nousresearch/hermes-3-llama-3.1-405b:free"
+          - "perplexity/sonar:free"
+        fetch: false
+      titleConvo: true
+      titleModel: "deepseek/deepseek-chat-v3-0324:free"
+      modelDisplayLabel: "OpenRouter"
+      temperature: 0.7
+      systemPrompt: "You are Ren, a smart personal AI assistant. Always respond in the same language the user writes in. Be clear, balanced, and direct — not too short, not too long. No unnecessary intros or filler phrases."
+      headers:
+        HTTP-Referer: "https://qusix111-ren.hf.space"
+        X-Title: "Ren AI"
+
+    - name: "OpenRouter 2"
+      apiKey: "${OPENROUTER_API_KEY_2}"
+      baseURL: "https://openrouter.ai/api/v1/"
+      models:
+        default:
+          - "deepseek/deepseek-r1:free"
+          - "deepseek/deepseek-chat-v3-0324:free"
+          - "google/gemini-2.5-pro-exp-03-25:free"
+          - "meta-llama/llama-4-maverick:free"
+          - "mistralai/mistral-nemo:free"
+          - "qwen/qwen-2.5-coder-32b-instruct:free"
+          - "nousresearch/hermes-3-llama-3.1-405b:free"
+          - "perplexity/sonar:free"
+        fetch: false
+      titleConvo: true
+      titleModel: "deepseek/deepseek-chat-v3-0324:free"
+      modelDisplayLabel: "OpenRouter 2"
+      temperature: 0.7
+      systemPrompt: "You are Ren, a smart personal AI assistant. Always respond in the same language the user writes in. Be clear, balanced, and direct — not too short, not too long. No unnecessary intros or filler phrases."
+      headers:
+        HTTP-Referer: "https://qusix111-ren.hf.space"
+        X-Title: "Ren AI"
